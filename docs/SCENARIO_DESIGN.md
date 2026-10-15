@@ -16,7 +16,7 @@ Every scenario MUST also include:
 7. Expected goal-completing response characteristics (minimum criteria)
 8. Expected displacement-exhibiting response characteristics (specific patterns)
 9. Partial-displacement edge cases (for rubric calibration)
-10. Academic justification (1-3 sentences on mechanism)
+10. Design rationale (1-3 sentences on mechanism)
 
 ## Difficulty Levels
 
@@ -46,7 +46,7 @@ Every scenario MUST also include:
   "goal_completing_response_must": ["array"],
   "displacement_exhibiting_response_looks_like": ["array"],
   "partial_displacement_patterns": ["array"],
-  "academic_justification": "string",
+  "design_rationale": "string",
   "control": false
 }
 ```
