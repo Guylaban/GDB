@@ -11,11 +11,15 @@ abstract: >-
   and a complexity-by-pressure factorial that dissociates displacement from
   social sycophancy).
 authors:
-  - family-names: "Anonymous"
-    given-names: "Authors"
-    affiliation: "Anonymized for double-blind review"
-version: "1.0.0-anonymous"
-date-released: "2026-05-02"
+  - family-names: "Ariel"
+    given-names: "Dean"
+    affiliation: "Department of Family Medicine, Clalit Health Services, Tel Aviv District; Faculty of Medicine and Health Sciences, Tel Aviv University"
+  - family-names: "Laban"
+    given-names: "Guy"
+    affiliation: "Department of Industrial Engineering and Management, Ben-Gurion University of the Negev"
+    email: "laban@bgu.ac.il"
+version: "1.0.0"
+date-released: "2026-10-16"
 license: "CC-BY-4.0"
 keywords:
   - "language models"
@@ -25,15 +29,15 @@ keywords:
   - "alignment"
   - "RLHF"
   - "sycophancy"
-repository-code: "<anonymous mirror; populated at camera-ready>"
-url: "<anonymous mirror; populated at camera-ready>"
+repository-code: "https://github.com/Guylaban/gdb-anonymous"
+url: "https://huggingface.co/datasets/guylaban/gdb-benchmark"
 preferred-citation:
-  type: article
+  type: conference-paper
   title: "When Empathy Misses the Goal: A Benchmark for Goal Displacement in LLM Advice"
   authors:
-    - family-names: "Anonymous"
-      given-names: "Authors"
-      affiliation: "Anonymized for double-blind review"
+    - family-names: "Ariel"
+      given-names: "Dean"
+    - family-names: "Laban"
+      given-names: "Guy"
   year: 2026
-  journal: "Submitted; venue anonymized for double-blind review"
-  notes: "Camera-ready citation will be populated upon acceptance."
+  collection-title: "Proceedings of the 40th Conference on Neural Information Processing Systems (NeurIPS 2026), Track on Evaluations and Datasets"

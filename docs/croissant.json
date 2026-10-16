@@ -39,14 +39,14 @@
   "@type": "sc:Dataset",
   "conformsTo": "http://mlcommons.org/croissant/1.1",
   "name": "gdb-benchmark",
-  "alternateName": ["SniriGdb/gdb-benchmark", "GDB: Goal Displacement Benchmark"],
+  "alternateName": ["guylaban/gdb-benchmark", "GDB: Goal Displacement Benchmark"],
   "description": "GDB: When Empathy Misses the Goal. A Benchmark for Goal Displacement in LLM Advice. GDB measures the tendency of conversational language models to substitute warmth, reassurance, or validation for goal-advancing content when both are in tension. The benchmark contains 230 scenarios across 9 domains and 4 trap families (F0 empathy reference, F1 feasibility-override, F2 mixed empathy-with-constraint, F3 specificity check), with 4,134 human-scored responses across 18 LLMs.",
-  "url": "https://huggingface.co/datasets/SniriGdb/gdb-benchmark",
+  "url": "https://huggingface.co/datasets/guylaban/gdb-benchmark",
   "license": "https://choosealicense.com/licenses/cc-by-4.0/",
   "creator": {
     "@type": "Person",
-    "name": "Anonymous (double-blind review)",
-    "url": "https://huggingface.co/SniriGdb"
+    "name": "Dean Ariel and Guy Laban",
+    "url": "https://huggingface.co/guylaban"
   },
   "keywords": [
     "text-generation", "question-answering", "English", "cc-by-4.0",
@@ -74,7 +74,7 @@
       "@id": "repo",
       "name": "repo",
       "description": "The Hugging Face git repository.",
-      "contentUrl": "https://huggingface.co/datasets/SniriGdb/gdb-benchmark/tree/refs%2Fconvert%2Fparquet",
+      "contentUrl": "https://huggingface.co/datasets/guylaban/gdb-benchmark/tree/refs%2Fconvert%2Fparquet",
       "encodingFormat": "git+https",
       "sha256": "https://github.com/mlcommons/croissant/issues/80"
     },
@@ -103,7 +103,7 @@
     {
       "@type": "cr:RecordSet",
       "@id": "default",
-      "description": "SniriGdb/gdb-benchmark - 'default' subset",
+      "description": "guylaban/gdb-benchmark - 'default' subset",
       "field": [
         {"@type": "cr:Field", "@id": "default/split", "dataType": "sc:Text",
          "source": {"fileSet": {"@id": "parquet-files-for-config-default"},

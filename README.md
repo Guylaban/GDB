@@ -80,7 +80,7 @@ A Benchmark for Goal Displacement in LLM Advice. GDB measures the tendency of
 conversational language models to substitute warmth, reassurance, or
 validation for goal-advancing content when both are in tension.
 
-> Anonymous submission for double-blind review.
+> Paper: *When Empathy Misses the Goal: A Benchmark for Goal Displacement in LLM Advice*, Dean Ariel and Guy Laban, NeurIPS 2026 (Track on Evaluations and Datasets). Code: https://github.com/Guylaban/gdb-anonymous. Data: https://huggingface.co/datasets/guylaban/gdb-benchmark.
 
 ## TL;DR
 
@@ -467,21 +467,23 @@ Full text in `LICENSE`.
 ## How to cite
 
 ```bibtex
-@article{anonymous2026gdb,
-  title   = {When Empathy Misses the Goal: A Benchmark for Goal Displacement in LLM Advice},
-  author  = {[anonymous]},
-  journal = {[anonymous; under review]},
-  year    = {2026},
-  note    = {Anonymous submission; bibtex will be populated at camera-ready}
+@inproceedings{ariel2026gdb,
+  title     = {When Empathy Misses the Goal: A Benchmark for Goal Displacement in {LLM} Advice},
+  author    = {Ariel, Dean and Laban, Guy},
+  booktitle = {Proceedings of the 40th Conference on Neural Information Processing Systems (NeurIPS 2026), Track on Evaluations and Datasets},
+  year      = {2026}
 }
 ```
 
 ## Maintenance
 
-The dataset is versioned via the public mirror; the present anonymous bundle
-corresponds to version `1.0.0-anonymous`. The authors commit to a two-year
-maintenance window from the date of publication: bug fixes, scenario
-errata, and additional rater data will be released as patch versions.
-Issues, errata, and pull requests are welcome via the issue tracker on the
-public mirror (URL withheld for double-blind review and populated at
-camera-ready).
+The dataset is versioned on Hugging Face (https://huggingface.co/datasets/guylaban/gdb-benchmark)
+and mirrored on GitHub (https://github.com/Guylaban/gdb-anonymous); this
+release is version `1.0.0`. The authors commit to a two-year maintenance
+window from the date of publication: bug fixes, scenario errata, and
+additional rater data will be released as patch versions. Prior versions
+are preserved, deprecated scenarios are marked rather than deleted, and
+contributed scenarios are reviewed before inclusion. Anyone can evaluate
+new models with the released pipeline and rubric and submit the results.
+Issues, errata, and pull requests are welcome on the GitHub issue tracker;
+the maintainer contact is laban@bgu.ac.il.

@@ -1,8 +1,29 @@
 # Changelog
 
-All notable changes to GDB are recorded here. Versioning follows
-SemVer-with-an-anonymous-suffix during the review phase; numeric
-versions will be assigned at camera-ready.
+All notable changes to GDB are recorded here. Versioning follows SemVer.
+
+## [1.0.0] — 2026-10-16
+
+Camera-ready release accompanying the NeurIPS 2026 paper.
+
+### Added
+- Human scores by two raters for the 80 responses of the discriminant
+  (high-complexity, low-pressure) cell of the 2x2 probe
+  (`discriminant_2x2/annotations/human_hl/`), and
+  `code/discriminant_2x2_sensitivity.py`, which reproduces the HL-cell
+  contingency, the operationalisation-sensitivity sweep and the paired
+  pressure contrasts reported in Section 6.1 and Appendix K.
+- `code/generate_responses.py` for evaluating new models; Dockerfile,
+  `environment.yml` and `requirements_locked.txt` for exact reproduction.
+- `docs/SCENARIO_DESIGN.md` (scenario schema and design criteria).
+
+### Changed
+- Scenario field `academic_justification` renamed to `design_rationale`
+  (values unchanged).
+- `unified_dataset.jsonl` uses `null` instead of `NaN` for the six
+  failed-generation rows.
+- `docs/croissant.json` upgraded to Croissant 1.1 with Responsible AI fields.
+- README, datasheet and citation files de-anonymised.
 
 ## [1.0.0-anonymous] — 2026-05-03
 

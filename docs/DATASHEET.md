@@ -3,8 +3,9 @@
 > *When Empathy Misses the Goal: A Benchmark for Goal Displacement in LLM Advice.*
 
 Datasheet following Gebru et al. (2021), "Datasheets for Datasets."
-Anonymous submission for double-blind review; identifying details about the
-research team, institutions, and IRB protocol numbers have been redacted.
+Accompanies *When Empathy Misses the Goal: A Benchmark for Goal Displacement
+in LLM Advice* (Ariel and Laban, NeurIPS 2026, Track on Evaluations and
+Datasets).
 
 ---
 
@@ -18,11 +19,12 @@ sycophancy and helpfulness benchmarks conflate epistemic deference with
 functional goal abandonment; GDB was built to dissociate the two.
 
 **1.2 Who created the dataset?**
-The research team (anonymized for review). Two of the team members
-(referred to here as A1 and A2) annotated the full corpus.
+Dean Ariel (Clalit Health Services and Tel Aviv University) and Guy Laban
+(Ben-Gurion University of the Negev). The two authors (referred to here as
+A1 and A2) annotated the full corpus.
 
 **1.3 Who funded the creation of the dataset?**
-Anonymized for review. Funding sources will be disclosed at camera-ready.
+See the acknowledgements of the published paper.
 
 **1.4 Any other comments?**
 No.
@@ -155,8 +157,9 @@ annotation: 2026. External rater collection: 2026.
 
 **3.4 Were any ethical review processes conducted?**
 The external rater study (191-item subset) was conducted under an
-ethics protocol approved by the host institution's research ethics
-board (protocol number anonymized for review). Raters were recruited
+ethics protocol approved by the departmental ethics committee of the
+Department of Industrial Engineering and Management, Ben-Gurion University
+of the Negev. Raters were recruited
 via Prolific, gave informed consent, and were paid GBP 9 per hour
 (above the Prolific minimum at the time). No personally identifying
 information was collected beyond the Prolific worker ID, which is not
@@ -229,12 +232,13 @@ re-annotation.
 Yes. The dataset is released under CC-BY-4.0 (data) and MIT (code).
 
 **6.2 How will the dataset be distributed?**
-Via a public mirror at camera-ready (URL withheld for double-blind
-review). The present anonymous bundle is the version-1.0.0 snapshot.
+On Hugging Face at https://huggingface.co/datasets/guylaban/gdb-benchmark
+(data, with Croissant metadata served by the Hub) and on GitHub at
+https://github.com/Guylaban/gdb-anonymous (code and data mirror). This is
+version 1.0.0.
 
 **6.3 When will the dataset be distributed?**
-At camera-ready, contingent on acceptance. The reviewer-facing version
-is this anonymous bundle.
+Released October 2026 with the camera-ready version of the paper.
 
 **6.4 Will the dataset be distributed under a copyright or other
 intellectual property license?**
@@ -273,15 +277,15 @@ No.
 ## 7. Maintenance
 
 **7.1 Who will be supporting/hosting/maintaining the dataset?**
-The research team (anonymized for review). Maintenance contact details
-will be added at camera-ready.
+The authors. Hosting is on Hugging Face with a GitHub mirror.
 
 **7.2 How can the owner be contacted?**
-Via the issue tracker on the public mirror (URL withheld for review).
+Guy Laban, laban@bgu.ac.il, or the issue tracker at
+https://github.com/Guylaban/gdb-anonymous/issues.
 
 **7.3 Is there an erratum?**
-None at v1.0.0-anonymous. Errata will be tracked in the public mirror's
-issue tracker.
+None at v1.0.0. Errata will be tracked in the GitHub issue tracker and
+recorded in CHANGELOG.md.
 
 **7.4 Will the dataset be updated?**
 Yes. Patch versions for scenario errata and additional rater data;
