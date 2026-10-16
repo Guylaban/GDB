@@ -156,12 +156,10 @@ Scenario authoring: late 2025. Response generation: 2025-2026. Author
 annotation: 2026. External rater collection: 2026.
 
 **3.4 Were any ethical review processes conducted?**
-The external rater study (191-item subset) was conducted under an
-ethics protocol approved by the departmental ethics committee of the
-Department of Industrial Engineering and Management, Ben-Gurion University
-of the Negev. Raters were recruited
-via Prolific, gave informed consent, and were paid GBP 9 per hour
-(above the Prolific minimum at the time). No personally identifying
+The only human involvement is the external rater study (191-item subset),
+in which two paid raters applied the rubric to model-generated text. Raters
+were recruited via Prolific, gave informed consent, and were paid GBP 9 per
+hour (above the Prolific minimum at the time). No personally identifying
 information was collected beyond the Prolific worker ID, which is not
 released.
 
