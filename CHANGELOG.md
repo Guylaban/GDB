@@ -29,6 +29,18 @@ Camera-ready release accompanying the NeurIPS 2026 paper.
   failed-generation rows.
 - `docs/croissant.json` upgraded to Croissant 1.1 with Responsible AI fields.
 - README, datasheet and citation files de-anonymised.
+- `annotations/external_raters/all_raters_scores.csv` gains a `model`
+  column (the served model for each of the 191 items), so the external-gold
+  tier check, the model-ordering correlation, the external-vs-judge row and
+  the six-rater Krippendorff alpha of Table 1 are reproducible;
+  `code/reliability.py` now computes all of them.
+- Table 1 corrections in the camera-ready paper: the six-rater Krippendorff
+  alpha is 0.715 / 0.737 / 0.648 (the submitted values came from a
+  coincidence matrix that paired each score with itself) and the DS balanced
+  accuracy of External-Avg vs Judge-Avg is 0.669 with the human side as
+  reference (the submitted 0.740 averaged both directions). The external
+  portability correlation is rho = 0.944 (n = 9 models with >= 5 trap items)
+  now that all 191 items carry a model identity.
 
 ## [1.0.0-anonymous] — 2026-05-03
 
