@@ -4,7 +4,7 @@ All notable changes to GDB are recorded here. Versioning follows SemVer.
 
 ## [1.0.0] — 2026-10-16
 
-Camera-ready release accompanying the NeurIPS 2026 paper.
+Camera-ready release accompanying the NeurIPS 2026 paper. Dataset DOI: 10.57967/hf/11042.
 
 ### Added
 - Human scores by two raters for the 80 responses of the discriminant

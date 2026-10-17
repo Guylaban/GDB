@@ -234,7 +234,7 @@ Yes. The dataset is released under CC-BY-4.0 (data) and MIT (code).
 On Hugging Face at https://huggingface.co/datasets/guylaban/gdb-benchmark
 (data, with Croissant metadata served by the Hub) and on GitHub at
 https://github.com/Guylaban/GDB (code and data mirror). This is
-version 1.0.0.
+version 1.0.0, with DOI 10.57967/hf/11042 (https://doi.org/10.57967/hf/11042).
 
 **6.3 When will the dataset be distributed?**
 Released October 2026 with the camera-ready version of the paper.

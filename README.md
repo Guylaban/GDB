@@ -475,6 +475,8 @@ Full text in `LICENSE`.
 }
 ```
 
+The dataset release itself has the DOI [10.57967/hf/11042](https://doi.org/10.57967/hf/11042), registered through Hugging Face and DataCite. Cite the paper for the benchmark and the DOI for the data release.
+
 ## Maintenance
 
 The dataset is versioned on Hugging Face (https://huggingface.co/datasets/guylaban/gdb-benchmark)
