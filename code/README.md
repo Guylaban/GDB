@@ -69,12 +69,11 @@ exactly.
 ### Approximate reproductions
 
 **Arena Elo (`arena_correlation.py`)**: The Elo scores hardcoded in the
-script are paper-time snapshots from early 2026. Chatbot Arena Elo values
-drift as new battles are collected; current values will differ. The paper
-reports ρ = -0.839 (n=15). Running the script today may produce a slightly
-different ρ because the underlying Elo inputs have changed. To reproduce
-the paper exactly, use the Elo values stored in the script as-is (do not
-update them). The script prints a reminder to this effect.
+script are the LMArena leaderboard snapshot used for Figure 2 of the paper
+(spring 2026). With them the script reproduces the paper's ρ = -0.706
+(p = 0.003, n = 15) exactly. Chatbot Arena Elo values drift as new battles
+are collected, so substituting current leaderboard values will change ρ;
+to reproduce the paper, leave the stored values as they are.
 
 **GLMM LRT (`tier_test.py`)**: The paper's GLMM result (likelihood-ratio
 test for tier in a mixed-effects logistic model with random intercepts per

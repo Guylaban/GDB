@@ -92,8 +92,8 @@ Displacement Severity). Across **18 models** (4,140 generated responses; 4,134
 scored — 6 failed generation and are retained as null rows), trap displacement
 (`DS >= 2`, averaged-rater consensus, mean of F1 and F2 cells) ranges from
 `0.0%` on the strongest frontier models to `37.7%` on the weakest open-weight
-8B model, and anti-correlates with Chatbot Arena Elo at Spearman `rho = -0.839`
-(`n = 15`).
+8B model, and anti-correlates with Chatbot Arena Elo at Spearman `rho = -0.706`
+(`p = 0.003`, `n = 15`).
 
 ## Repository contents
 
@@ -154,7 +154,7 @@ Run each script from the repository root (the directory containing this README):
 python code/headline_table.py      # Table 4: per-model displacement by family
 python code/reliability.py         # Table 3: IRR statistics
 python code/tier_test.py           # Section 7: tier χ² = 143.53 and GLMM LRT
-python code/arena_correlation.py   # Figure 2: Arena Elo correlation (ρ = -0.839)
+python code/arena_correlation.py   # Figure 2: Arena Elo correlation (ρ = -0.706)
 python code/discriminant_2x2.py    # Section 7.1 / Appendix O: 2×2 probe
 python code/probe1_stages.py       # Section 7.2 / Appendix P: post-training stages
 ```
@@ -167,7 +167,7 @@ under 5 minutes total on a standard laptop.
 | Table 4: per-model displacement by family | `code/headline_table.py` | Trap range 0.0–37.7% |
 | Table 3: reliability statistics | `code/reliability.py` | AC1 = 0.896 |
 | Section 7: tier chi-squared and GLMM LRT | `code/tier_test.py` | χ² = 143.53 |
-| Figure 2: Arena Elo correlation | `code/arena_correlation.py` | ρ ≈ −0.80 |
+| Figure 2: Arena Elo correlation | `code/arena_correlation.py` | ρ = −0.706 |
 | Section 7.1: 2×2 dissociation probe | `code/discriminant_2x2.py` | 4-cell table |
 | Section 7.2: post-training stage decomposition | `code/probe1_stages.py` | 7-checkpoint table |
 

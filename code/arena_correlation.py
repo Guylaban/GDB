@@ -20,27 +20,26 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _paths import DATA  # noqa: E402
 from headline_table import DISPLAY, avg_rater_displaced  # noqa: E402
 
-# Paper-time Chatbot Arena Elo scores (approximate). The exact values shift
-# as new models are added to the leaderboard; the rho reported here will
-# differ slightly from the paper's rho = -0.839 depending on the snapshot
-# used. The script is fully reproducible given these values; update ELO to
-# the leaderboard snapshot you want to reproduce.
+# Chatbot Arena (LMArena) Elo values as used for Figure 2 of the paper
+# (leaderboard snapshot taken at submission time, spring 2026). With these
+# values and Trap = mean(F1, F2) the script reproduces rho = -0.706, p = 0.003
+# (n = 15). Updating the values to a current leaderboard will change rho.
 ELO = {
-    "gemini-2.5-pro": 1376,
-    "gemini-3.1-pro-preview": 1395,
-    "gpt-5.4": 1410,
-    "claude-sonnet-4-6": 1325,
-    "deepseek-chat": 1287,
-    "gpt-4o": 1265,
-    "gemini-2.5-flash": 1310,
-    "gpt-4o-mini": 1170,
-    "ollama:mistral": 1080,
-    "ollama:llama3": 1140,
-    "ollama:llama3.1:8b": 1175,
-    "ollama:llama3.1:70b": 1248,
-    "ollama:qwen2.5:32b": 1230,
-    "ollama:qwen2.5:72b": 1257,
-    "ollama:nemotron": 1230,
+    "gemini-2.5-pro": 1467,
+    "gemini-3.1-pro-preview": 1490,
+    "gpt-5.4": 1484,
+    "claude-sonnet-4-6": 1468,
+    "deepseek-chat": 1334,
+    "gpt-4o": 1340,
+    "gemini-2.5-flash": 1415,
+    "gpt-4o-mini": 1288,
+    "ollama:mistral": 1097,
+    "ollama:llama3": 1193,
+    "ollama:llama3.1:8b": 1195,
+    "ollama:llama3.1:70b": 1310,
+    "ollama:qwen2.5:32b": 1272,
+    "ollama:qwen2.5:72b": 1310,
+    "ollama:nemotron": 1250,
 }
 
 # Models without public Elo at submission time (kept for documentation):
@@ -66,7 +65,7 @@ def main() -> None:
 
     print(f"n = {len(paired)} (of 18 models; 3 lack public Elo)")
     print(f"Spearman rho = {rho:.3f}, p = {p_rho:.3e}"
-          f"  [paper reports rho=-0.839 with submission-time Elo snapshot]")
+          f"  [paper: rho = -0.706, p = 0.003, with the Elo snapshot stored in ELO]")
     print(f"Pearson r    = {r_p:.3f}, p = {p_r:.3e}")
 
     # Leave-one-out range for Spearman.
