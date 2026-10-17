@@ -19,7 +19,7 @@ sycophancy and helpfulness benchmarks conflate epistemic deference with
 functional goal abandonment; GDB was built to dissociate the two.
 
 **1.2 Who created the dataset?**
-Dean Ariel (Clalit Health Services and Tel Aviv University) and Guy Laban
+Dean Ariel (Clalit Health Services, Tel Aviv University, and Ben-Gurion University of the Negev) and Guy Laban
 (Ben-Gurion University of the Negev). The two authors (referred to here as
 A1 and A2) annotated the full corpus.
 
@@ -233,7 +233,7 @@ Yes. The dataset is released under CC-BY-4.0 (data) and MIT (code).
 **6.2 How will the dataset be distributed?**
 On Hugging Face at https://huggingface.co/datasets/guylaban/gdb-benchmark
 (data, with Croissant metadata served by the Hub) and on GitHub at
-https://github.com/Guylaban/gdb-anonymous (code and data mirror). This is
+https://github.com/Guylaban/GDB (code and data mirror). This is
 version 1.0.0.
 
 **6.3 When will the dataset be distributed?**
@@ -280,7 +280,7 @@ The authors. Hosting is on Hugging Face with a GitHub mirror.
 
 **7.2 How can the owner be contacted?**
 Guy Laban, laban@bgu.ac.il, or the issue tracker at
-https://github.com/Guylaban/gdb-anonymous/issues.
+https://github.com/Guylaban/GDB/issues.
 
 **7.3 Is there an erratum?**
 None at v1.0.0. Errata will be tracked in the GitHub issue tracker and

@@ -13,7 +13,7 @@ abstract: >-
 authors:
   - family-names: "Ariel"
     given-names: "Dean"
-    affiliation: "Department of Family Medicine, Clalit Health Services, Tel Aviv District; Faculty of Medicine and Health Sciences, Tel Aviv University"
+    affiliation: "Department of Family Medicine, Clalit Health Services, Tel Aviv District; Faculty of Medicine and Health Sciences, Tel Aviv University; Stein Faculty of Computer and Information Science, Ben-Gurion University of the Negev"
   - family-names: "Laban"
     given-names: "Guy"
     affiliation: "Department of Industrial Engineering and Management, Ben-Gurion University of the Negev"
@@ -29,7 +29,7 @@ keywords:
   - "alignment"
   - "RLHF"
   - "sycophancy"
-repository-code: "https://github.com/Guylaban/gdb-anonymous"
+repository-code: "https://github.com/Guylaban/GDB"
 url: "https://huggingface.co/datasets/guylaban/gdb-benchmark"
 preferred-citation:
   type: conference-paper

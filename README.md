@@ -80,7 +80,7 @@ A Benchmark for Goal Displacement in LLM Advice. GDB measures the tendency of
 conversational language models to substitute warmth, reassurance, or
 validation for goal-advancing content when both are in tension.
 
-> Paper: *When Empathy Misses the Goal: A Benchmark for Goal Displacement in LLM Advice*, Dean Ariel and Guy Laban, NeurIPS 2026 (Track on Evaluations and Datasets). Code: https://github.com/Guylaban/gdb-anonymous. Data: https://huggingface.co/datasets/guylaban/gdb-benchmark.
+> Paper: *When Empathy Misses the Goal: A Benchmark for Goal Displacement in LLM Advice*, Dean Ariel and Guy Laban, NeurIPS 2026 (Track on Evaluations and Datasets). Code: https://github.com/Guylaban/GDB. Data: https://huggingface.co/datasets/guylaban/gdb-benchmark.
 
 ## TL;DR
 
@@ -478,7 +478,7 @@ Full text in `LICENSE`.
 ## Maintenance
 
 The dataset is versioned on Hugging Face (https://huggingface.co/datasets/guylaban/gdb-benchmark)
-and mirrored on GitHub (https://github.com/Guylaban/gdb-anonymous); this
+and mirrored on GitHub (https://github.com/Guylaban/GDB); this
 release is version `1.0.0`. The authors commit to a two-year maintenance
 window from the date of publication: bug fixes, scenario errata, and
 additional rater data will be released as patch versions. Prior versions
