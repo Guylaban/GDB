@@ -19,12 +19,12 @@ repository.
 
 | Script | Reproduces |
 |---|---|
-| `headline_table.py`   | Table 4 (per-model F0 / F1 / F2 / F3 / Trap / All), plus the tier rollup of response-pooled trap rates. |
-| `reliability.py`      | Table 3 (author IRR + external rater kappas, with a diff against the precomputed `kappa_results.json`). |
+| `headline_table.py`   | Table 2 (per-model F0 / F1 / F2 / F3 / Trap / All), plus the tier rollup of response-pooled trap rates. |
+| `reliability.py`      | Table 1 (author IRR + external rater kappas, with a diff against the precomputed `kappa_results.json`). |
 | `tier_test.py`        | Tier chi-squared on the per-response binary outcome and the LRT for tier in a logistic GLM controlling for trap family; falls back to cluster-robust SEs (cluster on `scenario_id`) when the binomial GLMM is unavailable. |
 | `arena_correlation.py`| Figure 2 numbers (Spearman / Pearson between trap displacement and Chatbot Arena Elo, plus leave-one-out range). |
-| `probe1_stages.py`    | Section 7.2 / Appendix P (per-checkpoint F0 / F1 / F2 / F3 / Trap rates from the post-training probe, averaged across the GPT-4.1 and Kimi-K2 judges). |
-| `discriminant_2x2.py` | Section 7.1 / Appendix O (per-cell DS>=2, sycophancy-positive, and within-cell Spearman rho between DS and max-sycophancy). |
+| `probe1_stages.py`    | Section 6 / Appendix L (per-checkpoint F0 / F1 / F2 / F3 / Trap rates from the post-training probe, averaged across the GPT-4.1 and Kimi-K2 judges). |
+| `discriminant_2x2.py` | Section 6 / Appendix K (per-cell DS>=2, sycophancy-positive, and within-cell Spearman rho between DS and max-sycophancy). |
 
 ## Usage
 

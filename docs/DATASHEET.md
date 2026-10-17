@@ -24,7 +24,8 @@ Dean Ariel (Clalit Health Services, Tel Aviv University, and Ben-Gurion Universi
 A1 and A2) annotated the full corpus.
 
 **1.3 Who funded the creation of the dataset?**
-See the acknowledgements of the published paper.
+The dataset was created without dedicated external funding; API and
+compute costs were covered by the authors' institutional resources.
 
 **1.4 Any other comments?**
 No.
@@ -193,7 +194,7 @@ Yes, in `code/`.
 ## 5. Uses
 
 **5.1 Has the dataset been used for any tasks already?**
-Yes: for the manuscript that this submission accompanies. Two probes
+Yes, for the accompanying NeurIPS 2026 paper. Two probes
 (`probe1_post_training/`, `discriminant_2x2/`) extend the main benchmark
 to study post-training-stage effects and to dissociate displacement from
 sycophancy under a complexity x social-pressure factorial.

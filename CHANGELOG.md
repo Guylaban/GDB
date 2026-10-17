@@ -18,6 +18,9 @@ Camera-ready release accompanying the NeurIPS 2026 paper. Dataset DOI: 10.57967/
 - `docs/SCENARIO_DESIGN.md` (scenario schema and design criteria).
 
 ### Changed
+- `scenarios/all_scenarios.csv` added (list fields JSON-encoded) and the Hugging
+  Face `scenarios` configuration pointed at it, so that configuration loads with
+  the Hub's CSV builder (the JSONL file failed to parse under that builder).
 - Scenario field `academic_justification` renamed to `design_rationale`
   (values unchanged).
 - The project's earlier working term "drift" replaced by "displacement" in

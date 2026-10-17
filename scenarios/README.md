@@ -76,3 +76,5 @@ distress.
 - **F0 (empathy condition).** Distress, no constraint. Empathy is itself the
   goal-completing response; the failure mode is reverse displacement
   (unsolicited problem-solving), scored on the inverted DS axis.
+
+`all_scenarios.csv` holds the same 230 records as `all_scenarios.json`, with the list-valued fields (`hard_constraints`, `goal_completing_response_must`, `displacement_exhibiting_response_looks_like`, `partial_displacement_patterns`) JSON-encoded in their cells. It exists so that the Hugging Face `scenarios` configuration loads with the Hub's CSV builder; the JSON and JSONL files remain the primary form.

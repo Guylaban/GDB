@@ -24,7 +24,7 @@ configs:
 - config_name: scenarios
   data_files:
   - split: full
-    path: scenarios/all_scenarios.jsonl
+    path: scenarios/all_scenarios.csv
 dataset_info:
   features:
   - name: scenario_id
@@ -151,12 +151,12 @@ All six scripts read only the checked-in CSV/JSONL files.
 Run each script from the repository root (the directory containing this README):
 
 ```bash
-python code/headline_table.py      # Table 4: per-model displacement by family
-python code/reliability.py         # Table 3: IRR statistics
-python code/tier_test.py           # Section 7: tier χ² = 143.53 and GLMM LRT
+python code/headline_table.py      # Table 2: per-model displacement by family
+python code/reliability.py         # Table 1: IRR statistics
+python code/tier_test.py           # Section 6: tier χ² = 143.53 and GLMM LRT
 python code/arena_correlation.py   # Figure 2: Arena Elo correlation (ρ = -0.706)
-python code/discriminant_2x2.py    # Section 7.1 / Appendix O: 2×2 probe
-python code/probe1_stages.py       # Section 7.2 / Appendix P: post-training stages
+python code/discriminant_2x2.py    # Section 6 / Appendix K: 2×2 probe
+python code/probe1_stages.py       # Section 6 / Appendix L: post-training stages
 ```
 
 All scripts print to stdout only; no files are written. Expected run time:
@@ -164,12 +164,12 @@ under 5 minutes total on a standard laptop.
 
 | Paper artifact | Script | Key output |
 |---|---|---|
-| Table 4: per-model displacement by family | `code/headline_table.py` | Trap range 0.0–37.7% |
-| Table 3: reliability statistics | `code/reliability.py` | AC1 = 0.896 |
-| Section 7: tier chi-squared and GLMM LRT | `code/tier_test.py` | χ² = 143.53 |
+| Table 2: per-model displacement by family | `code/headline_table.py` | Trap range 0.0–37.7% |
+| Table 1: reliability statistics | `code/reliability.py` | AC1 = 0.896 |
+| Section 6: tier chi-squared and GLMM LRT | `code/tier_test.py` | χ² = 143.53 |
 | Figure 2: Arena Elo correlation | `code/arena_correlation.py` | ρ = −0.706 |
-| Section 7.1: 2×2 dissociation probe | `code/discriminant_2x2.py` | 4-cell table |
-| Section 7.2: post-training stage decomposition | `code/probe1_stages.py` | 7-checkpoint table |
+| Section 6 / Appendix K: 2×2 dissociation probe | `code/discriminant_2x2.py` | 4-cell table |
+| Section 6 / Appendix L: post-training stage decomposition | `code/probe1_stages.py` | 7-checkpoint table |
 
 See `code/README.md` for notes on which results reproduce exactly and which
 are approximations (Arena Elo, GLMM).
@@ -400,7 +400,7 @@ LLM judges — they use human annotation only.
 operationalizes one specific failure mode (warmth/validation crowding
 out substance). It is not a measure of overall helpfulness, factual
 accuracy, harm-avoidance, or sycophancy. The 2x2 discriminant probe
-(Appendix O) provides empirical evidence that displacement dissociates
+(Appendix K) provides empirical evidence that displacement dissociates
 from sycophancy in the L-pressure cells, but the construct should not
 be over-extended.
 
