@@ -20,6 +20,11 @@ Camera-ready release accompanying the NeurIPS 2026 paper.
 ### Changed
 - Scenario field `academic_justification` renamed to `design_rationale`
   (values unchanged).
+- The project's earlier working term "drift" replaced by "displacement" in
+  the free-text justification fields of 199 scenarios (282 field values;
+  prompts, goals, constraints and all scores unchanged).
+- Thirteen double-encoded em dashes repaired in three F0 scenarios, and the
+  corresponding 36 `user_goal` cells in `unified_dataset.csv`/`.jsonl`.
 - `unified_dataset.jsonl` uses `null` instead of `NaN` for the six
   failed-generation rows.
 - `docs/croissant.json` upgraded to Croissant 1.1 with Responsible AI fields.
