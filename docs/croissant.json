@@ -9,8 +9,14 @@
     "containedIn": "cr:containedIn",
     "cr": "http://mlcommons.org/croissant/",
     "rai": "http://mlcommons.org/croissant/RAI/",
-    "data": {"@id": "cr:data", "@type": "@json"},
-    "dataType": {"@id": "cr:dataType", "@type": "@vocab"},
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
     "dct": "http://purl.org/dc/terms/",
     "extract": "cr:extract",
     "field": "cr:field",
@@ -34,124 +40,561 @@
     "separator": "cr:separator",
     "source": "cr:source",
     "subField": "cr:subField",
-    "transform": "cr:transform"
+    "transform": "cr:transform",
+    "prov": "http://www.w3.org/ns/prov#",
+    "wd": "https://www.wikidata.org/wiki/"
   },
   "@type": "sc:Dataset",
   "conformsTo": "http://mlcommons.org/croissant/1.1",
   "name": "gdb-benchmark",
-  "alternateName": ["guylaban/gdb-benchmark", "GDB: Goal Displacement Benchmark"],
+  "alternateName": [
+    "guylaban/gdb-benchmark",
+    "GDB: Goal Displacement Benchmark"
+  ],
   "description": "GDB: When Empathy Misses the Goal. A Benchmark for Goal Displacement in LLM Advice. GDB measures the tendency of conversational language models to substitute warmth, reassurance, or validation for goal-advancing content when both are in tension. The benchmark contains 230 scenarios across 9 domains and 4 family cells (two trap conditions, F1 feasibility-override and F2 mixed empathy-with-constraint; two reference cells, F0 empathy and F3 specificity check), with 4,134 human-scored responses across 18 LLMs.",
   "url": "https://huggingface.co/datasets/guylaban/gdb-benchmark",
   "identifier": "https://doi.org/10.57967/hf/11042",
   "citeAs": "@inproceedings{ariel2026gdb, title={When Empathy Misses the Goal: A Benchmark for Goal Displacement in LLM Advice}, author={Ariel, Dean and Laban, Guy}, booktitle={Proceedings of the 40th Conference on Neural Information Processing Systems (NeurIPS 2026), Track on Evaluations and Datasets}, year={2026}}",
   "license": "https://choosealicense.com/licenses/cc-by-4.0/",
+  "version": "1.0.0",
+  "datePublished": "2026-10-17",
   "creator": [
-    {"@type": "Person", "name": "Dean Ariel"},
-    {"@type": "Person", "name": "Guy Laban", "url": "https://huggingface.co/guylaban"}
+    {
+      "@type": "Person",
+      "name": "Dean Ariel"
+    },
+    {
+      "@type": "Person",
+      "name": "Guy Laban",
+      "url": "https://huggingface.co/guylaban"
+    }
   ],
   "keywords": [
-    "text-generation", "question-answering", "English", "cc-by-4.0",
-    "1K - 10K", "Tabular", "Text", "benchmark", "llm", "evaluation",
-    "alignment", "goal-displacement", "sycophancy", "rlhf"
+    "text-generation",
+    "question-answering",
+    "English",
+    "cc-by-4.0",
+    "1K - 10K",
+    "Tabular",
+    "Text",
+    "benchmark",
+    "llm",
+    "evaluation",
+    "alignment",
+    "goal-displacement",
+    "sycophancy",
+    "rlhf"
   ],
-
   "rai:dataCollection": "Scenarios are expert-constructed by the authors following a published rubric (Appendix A of the paper); each of the 230 scenarios is a synthetic user prompt paired with an explicit user goal, optional hard constraints, and a trap-family label. Model responses (n=4,140 raw / 4,134 scored) were generated from 18 LLMs (OpenAI, Anthropic, Google and DeepSeek via vendor APIs; Meta, Mistral AI, Alibaba Qwen and NVIDIA open-weight models served locally via Ollama) at temperature 0.7 with no system prompt. Each response was independently scored by two human annotators on three ordinal rubric dimensions (Goal Fidelity, Feasibility Acknowledgment, Displacement Severity) using the rubric in Appendix A.",
-
   "rai:dataBiases": "Scenarios are written in U.S.-centric English and reflect U.S. institutional contexts (American legal, medical, educational, and financial systems; U.S. cultural norms around emotional expression and family structure). Domain coverage is intentionally biased toward consequential decision-making contexts (career, parenting, relationships, finance, health, legal, education) and excludes purely factual or entertainment queries. The two human annotators are co-authors of the rubric, so author-vs-author agreement is high by construction; the external validation study (Appendix H) uses two non-author raters for portability evidence. Model selection covers frontier, mid-tier, and open-weight 7B-72B models available from March to May 2026 and is not a random sample of the LLM population.",
-
   "rai:personalSensitiveInformation": "None. All 230 scenarios are fictional and written by the authors; no human-subject data is included. Several scenarios reference sensitive topics (substance relapse, suicidal ideation by third parties, intimate-partner violence, sexual assault, self-harm) for the explicit purpose of probing whether models displace constraint-bearing or distressed-user goals; full content warnings and rationale are documented in the datasheet (Appendix N of the paper). No real persons are named; no real medical, legal, or financial cases are described.",
-
   "rai:dataUseCases": "Intended for: (1) pre-deployment screening of conversational LLMs in advice and decision-support contexts; (2) post-training calibration to detect whether RLHF/DPO pipelines suppress goal displacement; (3) longitudinal tracking of within-vendor generational changes in displacement behavior; (4) alignment research on the warmth-vs-substance trade-off; (5) academic study of sycophancy-adjacent failure modes. Not intended as a source of medical, legal, or financial advice; not recommended as LLM training data without explicit displacement-aware filtering, since the trap scenarios contain emotionally charged content paired with infeasible user requests.",
-
   "rai:dataSocialImpact": "Positive: Provides a diagnostic tool for identifying a previously underspecified failure mode in conversational LLMs (substituting warmth for goal-completion under user distress or hard constraints). Helps researchers and deployers detect models that pass standard alignment tests but fail on consequential advice-giving. Negative risks: Could be used to optimize models for evading detection rather than fixing the underlying behavior; if used as training data without care, the trap scenarios could teach models to detect-and-route around the rubric rather than improve goal-completion. Author annotation is expert annotation; the two external raters were recruited on Prolific, gave informed consent, and were paid 9 GBP per hour.",
-
   "rai:dataLimitations": "(1) Synthetic scenarios may not capture the full distribution of naturalistic user query structures, multi-turn dialogue dynamics, or system-prompted assistant configurations. (2) Single-turn only: displacement may manifest differently across multi-turn conversations where the user can re-anchor the goal. (3) English and U.S.-centric: results may not generalize to other languages or cultural contexts; the warmth-substance trade-off may load differently on different linguistic registers. (4) Two human annotators are paper co-authors, yielding inflated mechanical agreement; external validation (Appendix H) and a 6-rater Krippendorff's alpha (Table 1) provide portability evidence. (5) Cohort of 18 models is a snapshot from March to May 2026 and will become stale as new models are released. (6) Temperature fixed at 0.7; sampling-induced variance not characterized.",
-
   "rai:hasSyntheticData": true,
-
+  "prov:wasDerivedFrom": "No upstream dataset. The 230 scenarios were written by the dataset creators (Dean Ariel and Guy Laban) and are not drawn from existing datasets, user logs or real conversations. The 4,134 responses are the outputs of the 18 evaluated models listed in the paper and in README.md, generated from those scenarios. The annotations were produced by the two creators (all responses), by two external raters recruited on Prolific (191-item subset) and by two LLM judges, GPT-4.1 and Kimi-K2 (all responses; released separately under annotations/llm_judges/).",
+  "prov:wasGeneratedBy": "Responses were generated with code/generate_responses.py from https://github.com/Guylaban/GDB between March and April 2026 (single turn, no system prompt, temperature 0.7, maximum 4,096 output tokens; proprietary models via vendor APIs, open-weight models served locally through Ollama; exact model identifiers in README.md and in each response record). Human scores were assigned with the released rubric (rubric/rubric.md) and annotation guidelines (rubric/annotation_guidelines.md) between April and May 2026. The unified table unified_dataset/unified_dataset.csv is assembled from the per-model response and annotation files by the scripts in code/ and reproduces every number in the paper.",
   "distribution": [
     {
       "@type": "cr:FileObject",
-      "@id": "repo",
-      "name": "repo",
-      "description": "The Hugging Face git repository.",
-      "contentUrl": "https://huggingface.co/datasets/guylaban/gdb-benchmark/tree/refs%2Fconvert%2Fparquet",
-      "encodingFormat": "git+https"
+      "@id": "unified-dataset-csv",
+      "name": "unified_dataset.csv",
+      "description": "One row per (scenario, model) pair: 4,140 rows, of which 4,134 carry a response and scores (six failed generations are null rows).",
+      "contentUrl": "https://huggingface.co/datasets/guylaban/gdb-benchmark/resolve/main/unified_dataset/unified_dataset.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "f193758eb984b29b5648feb25bb2cc5e28f2bc68b46c0de6ae458dc22da5de62"
     },
     {
-      "@type": "cr:FileSet",
-      "@id": "parquet-files-for-config-default",
-      "containedIn": {"@id": "repo"},
-      "encodingFormat": "application/x-parquet",
-      "includes": "default/*/*.parquet"
+      "@type": "cr:FileObject",
+      "@id": "scenarios-csv",
+      "name": "all_scenarios.csv",
+      "description": "The 230 scenarios with their full schema; list-valued fields are JSON-encoded strings. Identical content to scenarios/all_scenarios.json.",
+      "contentUrl": "https://huggingface.co/datasets/guylaban/gdb-benchmark/resolve/main/scenarios/all_scenarios.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "7ea63df00cef46ef77cff2b0f669dadf24e7ddb35c452ee7f805ba6ee588a19a"
     }
   ],
-
   "recordSet": [
     {
       "@type": "cr:RecordSet",
-      "@id": "default_splits",
-      "name": "default_splits",
-      "description": "Splits for the default config.",
-      "dataType": "cr:Split",
-      "key": {"@id": "default_splits/split_name"},
+      "@id": "default",
+      "description": "Scored responses: one record per (scenario, model) pair with the user prompt, the model response, both authors' GF/FA/DS scores, their averages and the DS>=2 displacement indicator.",
       "field": [
-        {"@type": "cr:Field", "@id": "default_splits/split_name", "dataType": "sc:Text"}
+        {
+          "@type": "cr:Field",
+          "@id": "default/scenario_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "scenario_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/trap_family",
+          "dataType": "cr:Int64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "trap_family"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/control",
+          "dataType": "cr:Int64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "control"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/domain",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "domain"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/difficulty",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "difficulty"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/user_goal",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "user_goal"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/user_prompt",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "user_prompt"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/hard_constraints",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "hard_constraints"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/model",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "model"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/temperature",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "temperature"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/response",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "response"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/gf_a1",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "gf_a1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/fa_a1",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "fa_a1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/ds_a1",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "ds_a1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/gf_a2",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "gf_a2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/fa_a2",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "fa_a2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/ds_a2",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "ds_a2"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/gf",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "gf"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/fa",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "fa"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/ds",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "ds"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "default/displaced",
+          "dataType": "cr:Float64",
+          "source": {
+            "fileObject": {
+              "@id": "unified-dataset-csv"
+            },
+            "extract": {
+              "column": "displaced"
+            }
+          }
+        }
       ],
-      "data": [{"default_splits/split_name": "full"}]
+      "name": "default"
     },
     {
       "@type": "cr:RecordSet",
-      "@id": "default",
-      "description": "guylaban/gdb-benchmark - 'default' subset",
+      "@id": "scenarios",
+      "name": "scenarios",
+      "key": {
+        "@id": "scenarios/id"
+      },
+      "description": "The 230 scenarios in their released schema.",
       "field": [
-        {"@type": "cr:Field", "@id": "default/split", "dataType": "sc:Text",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"},
-                    "extract": {"fileProperty": "fullpath"},
-                    "transform": {"regex": "default/(?:partial-)?(full)/.+parquet$"}},
-         "references": {"field": {"@id": "default_splits/split_name"}}},
-        {"@type": "cr:Field", "@id": "default/scenario_id", "dataType": "sc:Text",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "scenario_id"}}},
-        {"@type": "cr:Field", "@id": "default/trap_family", "dataType": "cr:Int64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "trap_family"}}},
-        {"@type": "cr:Field", "@id": "default/control", "dataType": "cr:Int64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "control"}}},
-        {"@type": "cr:Field", "@id": "default/domain", "dataType": "sc:Text",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "domain"}}},
-        {"@type": "cr:Field", "@id": "default/difficulty", "dataType": "sc:Text",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "difficulty"}}},
-        {"@type": "cr:Field", "@id": "default/user_goal", "dataType": "sc:Text",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "user_goal"}}},
-        {"@type": "cr:Field", "@id": "default/user_prompt", "dataType": "sc:Text",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "user_prompt"}}},
-        {"@type": "cr:Field", "@id": "default/hard_constraints", "dataType": "sc:Text",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "hard_constraints"}}},
-        {"@type": "cr:Field", "@id": "default/model", "dataType": "sc:Text",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "model"}}},
-        {"@type": "cr:Field", "@id": "default/temperature", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "temperature"}}},
-        {"@type": "cr:Field", "@id": "default/response", "dataType": "sc:Text",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "response"}}},
-        {"@type": "cr:Field", "@id": "default/gf_a1", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "gf_a1"}}},
-        {"@type": "cr:Field", "@id": "default/fa_a1", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "fa_a1"}}},
-        {"@type": "cr:Field", "@id": "default/ds_a1", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "ds_a1"}}},
-        {"@type": "cr:Field", "@id": "default/gf_a2", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "gf_a2"}}},
-        {"@type": "cr:Field", "@id": "default/fa_a2", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "fa_a2"}}},
-        {"@type": "cr:Field", "@id": "default/ds_a2", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "ds_a2"}}},
-        {"@type": "cr:Field", "@id": "default/gf", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "gf"}}},
-        {"@type": "cr:Field", "@id": "default/fa", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "fa"}}},
-        {"@type": "cr:Field", "@id": "default/ds", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "ds"}}},
-        {"@type": "cr:Field", "@id": "default/displaced", "dataType": "cr:Float64",
-         "source": {"fileSet": {"@id": "parquet-files-for-config-default"}, "extract": {"column": "displaced"}}}
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/id",
+          "dataType": "sc:Text",
+          "description": "Scenario identifier, e.g. F1-FIN-001.",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/trap_family",
+          "dataType": "cr:Int64",
+          "description": "0 = F0 empathy condition, 1 = F1 feasibility override, 2 = F2 mixed trap, 3 = F3 specificity check.",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "trap_family"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/trap_family_justification",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "trap_family_justification"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/domain",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "domain"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/difficulty",
+          "dataType": "sc:Text",
+          "description": "obvious, moderate or subtle.",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "difficulty"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/difficulty_justification",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "difficulty_justification"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/user_prompt",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "user_prompt"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/user_goal",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "user_goal"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/hard_constraints",
+          "dataType": "sc:Text",
+          "description": "JSON-encoded list of strings.",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "hard_constraints"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/goal_completing_response_must",
+          "dataType": "sc:Text",
+          "description": "JSON-encoded list of strings.",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "goal_completing_response_must"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/design_rationale",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "design_rationale"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/control",
+          "dataType": "cr:Int64",
+          "description": "1 for F0 scenarios, else 0.",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "control"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/displacement_exhibiting_response_looks_like",
+          "dataType": "sc:Text",
+          "description": "JSON-encoded list of strings.",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "displacement_exhibiting_response_looks_like"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "scenarios/partial_displacement_patterns",
+          "dataType": "sc:Text",
+          "description": "JSON-encoded list of strings.",
+          "source": {
+            "fileObject": {
+              "@id": "scenarios-csv"
+            },
+            "extract": {
+              "column": "partial_displacement_patterns"
+            }
+          }
+        }
       ]
     }
   ]
