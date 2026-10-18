@@ -153,8 +153,9 @@ each provider. Annotation: a custom rater interface that hid model
 identity and shuffled response order within each scenario.
 
 **3.3 Over what timeframe was the data collected?**
-Scenario authoring: late 2025. Response generation: 2025-2026. Author
-annotation: 2026. External rater collection: 2026.
+Scenario authoring: late 2025 to early 2026. Response generation: March to
+April 2026 (per-response timestamps are included in the released response
+files). Author annotation and the external rater study: April to May 2026.
 
 **3.4 Were any ethical review processes conducted?**
 The external rater study (191-item subset) was approved by the departmental
